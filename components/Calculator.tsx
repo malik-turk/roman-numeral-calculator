@@ -72,6 +72,7 @@ export default function Calculator(): JSX.Element {
       <NumericInput
         id="numeric-input"
         type="number"
+        data-testid="numeric-input"
         min={1}
         max={1000}
         onChange={handleCalculation}
@@ -79,12 +80,12 @@ export default function Calculator(): JSX.Element {
         placeholder="e.g. 318"
       />
       {(numericValue < 1 || numericValue > 1000) &&
-        <ErrorLabel>* The number you enter must be between 1 and 1000</ErrorLabel>
+        <ErrorLabel data-testid="error-label">* The number you enter must be between 1 and 1000</ErrorLabel>
       }
       {romanNumeral && (
         <>
           <hr />
-          <RomanNumeralsOutput>
+          <RomanNumeralsOutput data-testid="roman-numeral">
             <span>Result: </span>
             {romanNumeral}
           </RomanNumeralsOutput>

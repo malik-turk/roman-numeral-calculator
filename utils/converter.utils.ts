@@ -2,9 +2,9 @@
  * Convert integers to roman numerals
  * @param number the number to be converted
  */
-export const converter = (number: number): string|undefined => {
+export const converter = (number: number): string => {
     if (number > 1000 || number < 1) {
-        return;
+        return '';
     }
 
     let result = '';
