@@ -1,14 +1,19 @@
-import { render, screen } from '@testing-library/react'
-import Home from '@/pages/index'
+import { render, screen } from '@testing-library/react';
+import Home from '@/pages/index';
+
+jest.mock('utils/converter.utils',
+  () => ({
+    converter: () => 'IV'
+  }),
+  { virtual: true }
+);
 
 describe('Home', () => {
-  it('renders a heading', () => {
+  it('renders a title', () => {
     render(<Home />)
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
+    const title = screen.getByTestId('calculator-title');
 
-    expect(heading).toBeInTheDocument()
+    expect(title).toBeInTheDocument();
   })
 })

@@ -22,7 +22,7 @@ export default function Home(): JSX.Element {
   return (
     <MainWrapper className={GideonRoman.className}>
       <Container>
-        <Title>Roman Numerals Converter</Title>
+        <Title data-testid="calculator-title">Roman Numerals Converter</Title>
         <Calculator />
       </Container>
     </MainWrapper>
