@@ -21,7 +21,6 @@ const NumericInput = styled.input`
 const RomanNumeralsOutput = styled.div`
   font-size: 24px;
   color: #000;
-  padding-left: 25px;
 
   span {
     text-transform: uppercase;
