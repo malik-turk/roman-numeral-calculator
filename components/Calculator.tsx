@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Styled Components
@@ -7,9 +8,13 @@ const Container = styled.div`
   padding: 15px;
   border-radius: 15px;
 `;
+const NumericInputLabel = styled.label`
+  font-size: 20px;
+  color: #161b22;
+`;
 const NumericInput = styled.input`
   border: none;
-  background: #161B22;
+  background: #161b22;
   color: #fff;
   border-radius: 5px;
   height: 60px;
@@ -28,14 +33,48 @@ const RomanNumeralsOutput = styled.div`
 `;
 
 export default function Calculator(): JSX.Element {
+  const [numericValue, setNumericValue] = useState(null);
+  const [romanNumeral, setRomanNumeral] = useState("");
+
+  /**
+   * Handle calculations based on user input
+   * @param {ChangeEvent} e type event
+   */
+  const handleCalculation = (e: React.ChangeEvent): void => {};
+
+  /**
+   * Validate user input
+   * @param {ChangeEvent} e type event
+   */
+  const validateUserInput = (e: React.KeyboardEvent): void => {
+    if (e.key === 'e' || e.key === '.' || e.key === '+' || e.key === '-') {
+      e.preventDefault();
+    }
+  };
+
   return (
     <Container>
-      <NumericInput placeholder="e.g. 318" />
-      <hr />
-      <RomanNumeralsOutput>
-        <span>Result: </span>
-        VI
-      </RomanNumeralsOutput>
+      <NumericInputLabel htmlFor="numeric-input">
+        Enter the number you want to convert
+      </NumericInputLabel>
+      <NumericInput
+        id="numeric-input"
+        type="number"
+        min={1}
+        max={1000}
+        onChange={handleCalculation}
+        onKeyDown={validateUserInput}
+        placeholder="e.g. 318"
+      />
+      {romanNumeral && (
+        <>
+          <hr />
+          <RomanNumeralsOutput>
+            <span>Result: </span>
+            {romanNumeral}
+          </RomanNumeralsOutput>
+        </>
+      )}
     </Container>
-  )
+  );
 }
