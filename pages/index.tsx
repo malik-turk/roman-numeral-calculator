@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Gideon_Roman } from '@next/font/google'
+import Head from "next/head";
 
 // Components
 import { Container, MainWrapper } from "@/components/shared/Container.styled";
@@ -20,11 +21,16 @@ const Title = styled.h1`
 
 export default function Home(): JSX.Element {
   return (
-    <MainWrapper className={GideonRoman.className}>
-      <Container>
-        <Title data-testid="calculator-title">Roman Numerals Converter</Title>
-        <Calculator />
-      </Container>
-    </MainWrapper>
+    <>
+      <Head>
+        <title>Roman Numerals Converter</title>
+      </Head>
+      <MainWrapper className={GideonRoman.className}>
+        <Container>
+          <Title data-testid="calculator-title">Roman Numerals Converter</Title>
+          <Calculator />
+        </Container>
+      </MainWrapper>
+    </>
   )
 }
