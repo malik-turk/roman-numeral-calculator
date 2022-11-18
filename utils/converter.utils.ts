@@ -1,3 +1,6 @@
+// Types
+import { RomanNumeralsMap } from "types/converter";
+
 /**
  * Convert integers to roman numerals
  * @param number the number to be converted
@@ -8,7 +11,7 @@ export const converter = (number: number): string => {
     }
 
     let result = '';
-    const romanNumeralsMap = {
+    const romanNumeralsMap: RomanNumeralsMap = {
         M: 1000,
         CM: 900,
         D: 500,
