@@ -1,29 +1,31 @@
-# Next.js + Jest
+# Properti Assignment
 
-This example shows how to configure Jest to work with Next.js.
+An app to calculate roman numerals
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+## Features
+- Convert Integers to roman numerals
+- Simultaneous UI changes
+- Easy UI and UX
 
-## How to Use
+## Requirements
+For development, you will only need Node.js (16+) installed on your environment.
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+## Installation
 
-In your terminal, run the following command:
+### `npm install`
+### `npm run dev`
 
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+## Testing
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
+### `npm run test`
 
-## Run Jest Tests
+## Technologies
 
-```bash
-npm test
-```
+- React 18
+- Styled Components
+- Jest & React Testing Library
+
+## Demo
